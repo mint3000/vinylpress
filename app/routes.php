@@ -26,4 +26,5 @@ Route::group(array('prefix'=>'/api'),function(){
 
 	Route::resource('posts', 'PostController');
 	Route::resource('comments', 'CommentController');
+	Route::resource('users', 'UserController');
 });
