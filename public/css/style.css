@@ -1,3 +1,51 @@
+body {
+    background: #FFF url(../images/background.jpg) no-repeat;
+    background-size: cover;
+    color: #FFF;
+}
+
+
+/**
+    Type
+*/
+h1,h2,h3,h4{
+    font-family: 'Rokkitt', serif;
+    font-weight: bold;
+    color: #ff5b02;
+}
+
+
+/**
+    Structure
+*/
+
+header .row{
+    padding: 30px 0;
+}
+header .row h1{
+    margin: 0;
+}
+.shaded{
+    background-color: rgba(0, 0, 0, 0.7);
+    margin-bottom: 10px;
+    padding-bottom: 10px;
+}
+
+
+/**
+    Buttons
+*/
+.btn-primary,
+.btn-primary:hover,
+.btn-primary:active,
+.btn-primary:focus{
+    background-color: #ff5b02;
+    border-color: #ff5b02;
+}
+
+/**
+    Errors
+*/
 .errors{
     color: #F00;
     line-height: 1.2em;
