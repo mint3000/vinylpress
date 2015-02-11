@@ -23,4 +23,6 @@ Route::get('/admin', function(){
 Route::group(array('prefix'=>'/api'),function(){
 	Route::post('login/auth','AuthController@Login');
 	Route::get('login/destroy','AuthController@Logout');
+
+	Route::resource('posts', 'PostController');
 });
