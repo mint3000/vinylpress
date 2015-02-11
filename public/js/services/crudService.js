@@ -2,21 +2,26 @@ var crud = angular.module('CrudService', []);
 
 crud.factory('CRUD', function($http){
     return {
-        all: function(){
+        all: function(action){
             var request = $http({
                 method: 'GET',
-                url: 'api/posts'
+                url: 'api/' + action
             });
             return request;
         },
-        create: function(){
-
+        create: function(action, data){
+            var request = $http({
+                method: 'POST',
+                url: 'api/' + action,
+                params: data
+            });
+            return request;
         },
-        get: function(id){
-
+        get: function(action, id){
+            return $http.get('api/' + action + '/' + id);
         },
-        update: function(id, data){
-
+        update: function(action, id, data){
+            return $http.put('api/' + action + '/' + id, data);
         },
         delete: function(id){
 
