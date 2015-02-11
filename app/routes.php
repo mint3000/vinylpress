@@ -15,3 +15,12 @@ Route::get('/', function()
 {
 	return View::make('hello');
 });
+
+Route::get('/admin', function(){
+	return View::make('admin');
+});
+
+Route::group(array('prefix'=>'/api'),function(){
+	Route::post('login/auth','AuthController@Login');
+	Route::get('login/destroy','AuthController@Logout');
+});
