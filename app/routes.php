@@ -25,4 +25,5 @@ Route::group(array('prefix'=>'/api'),function(){
 	Route::get('login/destroy','AuthController@Logout');
 
 	Route::resource('posts', 'PostController');
+	Route::resource('comments', 'CommentController');
 });
