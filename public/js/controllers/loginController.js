@@ -7,8 +7,9 @@ login.controller('LoginController', function($scope, $location, Login, SessionSt
             console.dir(response);
             $scope.formError = '';
             if (response.id){
-                $location.path('/dashboard');
                 SessionStorage.set('auth', true);
+                SessionStorage.set('user', JSON.stringify(response));
+                $location.path('/dashboard');
             }else{
                 $scope.formError = response;
             }
