@@ -6,7 +6,7 @@ var app = angular.module('blog', [
     'CrudService'
 ]);
 
-app.config(function($routeProvider, $locationProvider){
+app.config(function($routeProvider){
 
     $routeProvider.when('/',{
         templateUrl:'js/templates/login.html',
@@ -14,7 +14,17 @@ app.config(function($routeProvider, $locationProvider){
     });
 
     $routeProvider.when('/dashboard',{
-        templateUrl:'js/templates/dashboard.html'
+        templateUrl:'js/templates/dashboard.html',
+        resolve: {
+            // Auth Check
+            AuthUser: ['$location','SessionStorage',
+                function($location, SessionStorage){
+                    if (SessionStorage.get('auth') === null){
+                        $location.path('/');
+                    }
+                }
+            ]
+        }
     });
 
-});;
+});
