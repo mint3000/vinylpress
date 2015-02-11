@@ -19,9 +19,29 @@ class PostController extends \BaseController {
 	 *
 	 * @return Response
 	 */
-	public function create()
+	public function store()
 	{
-		//
+		$newPost = new Post;
+		$newPost->title = Input::get('title');
+		$newPost->text = Input::get('content');
+		$newPost->author_id = Input::get('userId');
+
+		if($newPost->save()){
+			return array('status'=>'Post Added');
+		}
+
+		return array('status'=>'Post Not Added');
+	}
+
+
+	/**
+	 * Show a specified post
+	 *
+	 * @param $id
+	 * @return Response
+	 */
+	public function show($id){
+		return Post::find($id);
 	}
 
 
@@ -33,7 +53,20 @@ class PostController extends \BaseController {
 	 */
 	public function update($id)
 	{
-		//
+		$post = Post::find($id);
+
+		if ($post){
+			$post->title = Input::get('title');
+			$post->text = Input::get('content');
+
+			if ($post->save()){
+				return array('status' => 'Post Updated');
+			}else{
+				return array('status' => 'Post Not Updated');
+			}
+		}else{
+			return array('status' => 'Post Not Found');
+		}
 	}
 
 
@@ -45,7 +78,9 @@ class PostController extends \BaseController {
 	 */
 	public function destroy($id)
 	{
-		//
+		$post = Comment::find($id);
+
+		$post->delete();
 	}
 
 
