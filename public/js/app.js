@@ -1,7 +1,9 @@
 var app = angular.module('blog', [
     'ngRoute',
     'LoginCtrl',
-    'AuthService'
+    'PostCtrl',
+    'AuthService',
+    'CrudService'
 ]);
 
 app.config(function($routeProvider, $locationProvider){

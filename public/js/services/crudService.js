@@ -1,7 +1,6 @@
-var crud = angular.module('CrudCtrl', []);
+var crud = angular.module('CrudService', []);
 
-crud.controller('CrudController', function(){
-
+crud.factory('CRUD', function(){
     return {
         all: function(){
 
@@ -16,7 +15,7 @@ crud.controller('CrudController', function(){
 
         },
         delete: function(id){
-            
+
         }
     }
 });
