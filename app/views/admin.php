@@ -32,8 +32,10 @@
     <!--angular controllers-->
     <script src="js/controllers/loginController.js"></script>
     <script src="js/controllers/postController.js"></script>
+    <script src="js/controllers/editPostController.js"></script>
     <!--angular services-->
     <script src="js/services/authService.js"></script>
     <script src="js/services/crudService.js"></script>
+    <script src="js/services/commentService.js"></script>
 </body>
 </html>
