@@ -33,7 +33,6 @@ dashboardDirective.directive('checkLogin', function(){
        },
        compile: function(){
            return function(scope, element, attrs){
-               console.log('logged in', scope.checkLogin());
                if (scope.checkLogin()){
                    element.html('<a href="#/admin/logout" class="btn btn-primary">Logout</a> <a href="#/admin/" class="btn btn-primary">Admin</a>');
                }else{

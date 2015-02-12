@@ -6,7 +6,7 @@
             <p>{{ getPost.text }}</p>
             <h4>Comments</h4>
             <comments commentid="{{ getPost.id }}"></comments>
-            <add-comment></add-comment>
+            <add-comment postid="{{ getPost.id }}"></add-comment>
         </div>
     </div>
 </div>
