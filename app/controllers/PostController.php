@@ -9,7 +9,7 @@ class PostController extends \BaseController {
 	 */
 	public function index()
 	{
-		$posts = Post::all();
+		$posts = Post::orderBy('created_at', 'desc')->get();
 		return $posts;
 	}
 
@@ -78,7 +78,7 @@ class PostController extends \BaseController {
 	 */
 	public function destroy($id)
 	{
-		$post = Comment::find($id);
+		$post = Post::find($id);
 
 		$post->delete();
 	}

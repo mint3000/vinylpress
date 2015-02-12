@@ -11,7 +11,7 @@ class AuthController extends BaseController{
 
     public function logout(){
         Auth::logout();
-        return 'Logged Out';
+        return Redirect::to('/');
     }
 
 }
