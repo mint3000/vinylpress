@@ -23,8 +23,8 @@ class CommentController extends \BaseController {
 	{
 		$newComment = new Comment;
 		$newComment->text = Input::get('content');
-		$newComment->author_id = Input::get('userId');
-		$newComment->post_id = Input::get('postId');
+		$newComment->author_id = Input::get('author_id');
+		$newComment->post_id = Input::get('post_id');
 
 		if($newComment->save()){
 			return array('status'=>'Comment Added');
