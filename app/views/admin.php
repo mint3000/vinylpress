@@ -18,13 +18,16 @@
     <div class="container">
         <header>
             <div class="row shaded">
-                <div class="col-sm-12">
-                    <h1>VinylPress</h1>
+                <div class="col-sm-10">
+                    <h1><a href="#/">VinylPress</a></h1>
+                </div>
+                <div class="col-sm-2 text-right">
+                    <check-login></check-login>
                 </div>
             </div>
         </header>
     </div>
-    <div class="container" id="view" ng-view>
+    <div class="container" ng-view>
 
     </div>
     <!--angular app-->
@@ -33,9 +36,13 @@
     <script src="js/controllers/loginController.js"></script>
     <script src="js/controllers/postController.js"></script>
     <script src="js/controllers/editPostController.js"></script>
+    <script src="js/controllers/mainController.js"></script>
     <!--angular services-->
     <script src="js/services/authService.js"></script>
     <script src="js/services/crudService.js"></script>
     <script src="js/services/commentService.js"></script>
+    <!--angular directives-->
+    <script src="js/directives/dashboardDirective.js"></script>
+    <script src="js/directives/mainDirective.js"></script>
 </body>
 </html>
