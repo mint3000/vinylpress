@@ -27,7 +27,7 @@
             <div class="row margin-bottom-10">
                 <div class="col-sm-3">
                     <a class="btn btn-primary" ng-hide="checkAuthor()" href="#/edit/{{ comment.id }}">Edit</a>
-                    <a class="btn btn-primary" ng-hide="checkAuthor()" ng-click="deletePost(comment.id)">Delete</a>
+                    <a class="btn btn-primary" ng-hide="checkAuthor()" ng-click="deleteComment(comment.id)">Delete</a>
                 </div>
                 <div class="col-sm-6">
                     {{ comment.text }}

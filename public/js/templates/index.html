@@ -7,7 +7,7 @@
             <p>{{ post.text }}</p>
             <h4>Comments</h4>
             <comments commentid="{{ post.id }}"></comments>
-            <add-comment></add-comment>
+            <add-comment postid="{{ post.id }}"></add-comment>
         </div>
     </div>
     <div class="col-sm-4">

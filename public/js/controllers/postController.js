@@ -52,5 +52,5 @@ posts.controller('PostController', function($scope, $route, $routeParams, Sessio
         request.success(function(){
             $route.reload();
         });
-    }
+    };
 });

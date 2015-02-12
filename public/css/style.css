@@ -58,6 +58,9 @@ header .row h1 a:focus{
 ul.post{
     list-style: none;
 }
+.comment-form{
+    display: none;
+}
 .margin-bottom-10{
     margin-bottom: 10px
 }
