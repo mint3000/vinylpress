@@ -53,6 +53,9 @@ mainDirective.directive('addComment', function(){
                 scope.addComment = function($event){
                     var commentButton = angular.element($event.target);
                     var commentForm = commentButton.siblings('.comment-form');
+                    scope.comment = {
+                        content : ''
+                    };
                     commentForm.show();
                     commentButton.hide();
                 };
