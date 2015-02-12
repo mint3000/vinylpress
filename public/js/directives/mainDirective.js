@@ -41,7 +41,6 @@ mainDirective.directive('addComment', function(){
 
                     var saveComment = CRUD.create('comments', comment);
                     saveComment.success(function(response){
-                        console.log(response);
                         $scope.getComments(postid);
                     });
                 }

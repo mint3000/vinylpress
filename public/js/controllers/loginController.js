@@ -5,7 +5,6 @@ login.controller('LoginController', function($scope, $location, Login, SessionSt
     $scope.loginSubmit = function(){
         var auth = Login.auth($scope.loginData);
         auth.success(function(response){
-            console.dir(response);
             $scope.formError = '';
             if (response.id){
                 SessionStorage.set('auth', true);
