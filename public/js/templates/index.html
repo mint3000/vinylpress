@@ -1,0 +1,19 @@
+<div class="row shaded">
+    <div class="col-sm-8">
+        <h2>Posts</h2>
+        <div ng-repeat="post in allPosts" class="post">
+            <p class="date">Posted by: <get-author authorId="{{ post.author_id }}"></get-author> - {{ post.created_at }}</p>
+            <h3><a href="#/post/{{ post.id }}">{{ post.title }}</a></h3>
+            <p>{{ post.text }}</p>
+            <h4>Comments</h4>
+            <comments commentid="{{ post.id }}"></comments>
+            <add-comment></add-comment>
+        </div>
+    </div>
+    <div class="col-sm-4">
+        <h2>Archives</h2>
+        <ul class="post">
+            <li ng-repeat="post in allPosts"><a href="#/post/{{ post.id }}">{{ post.created_at }}</a></li>
+        </ul>
+    </div>
+</div>

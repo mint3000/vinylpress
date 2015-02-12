@@ -1,0 +1,4 @@
+<div ng-repeat="comment in comments">
+    <p class="date">Posted by: <get-author authorId="{{ comment.author_id }}"></get-author> - {{ comment.created_at }}</p>
+    <p>{{ comment.text }}</p>
+</div>

@@ -3,15 +3,22 @@ var app = angular.module('blog', [
     'LoginCtrl',
     'PostCtrl',
     'EditPostCtrl',
+    'MainCtrl',
     'AuthService',
     'CrudService',
     'CommentService',
-    'DashboardDirective'
+    'DashboardDirective',
+    'MainDirective'
 ]);
 
 app.config(function($routeProvider){
 
-    $routeProvider.when('/',{
+    $routeProvider.when('/', {
+        templateUrl: 'js/templates/index.html',
+        controller: 'MainController'
+    });
+
+    $routeProvider.when('/admin',{
         templateUrl:'js/templates/login.html',
         controller:'LoginController',
         resolve: {
@@ -26,6 +33,11 @@ app.config(function($routeProvider){
                 }
             ]
         }
+    });
+
+    $routeProvider.when('/admin/logout', {
+        templateUrl: 'js/templates/logout.html',
+        controller: 'LoginController'
     });
 
     $routeProvider.when('/dashboard',{
@@ -77,6 +89,11 @@ app.config(function($routeProvider){
                 }
             ]
         }
+    });
+
+    $routeProvider.when('/post/:id',{
+        templateUrl: 'js/templates/post.html',
+        controller: 'PostController'
     });
 
 });

@@ -1,8 +1,15 @@
 var posts = angular.module('PostCtrl', []);
 
-posts.controller('PostController', function($scope, $routeParams, SessionStorage, CRUD){
+posts.controller('PostController', function($scope, $route, $routeParams, SessionStorage, CRUD){
     $scope.currentUser = JSON.parse(SessionStorage.get('user'));
 
+
+    if ($routeParams){
+        var getPost = CRUD.get('posts', $routeParams.id);
+        getPost.success(function(response){
+            $scope.getPost = response;
+        });
+    }
 
     /**
      * Get all posts
@@ -39,4 +46,11 @@ posts.controller('PostController', function($scope, $routeParams, SessionStorage
         });
 
     };
+
+    $scope.deletePost = function(id){
+        var request = CRUD.delete('posts', id);
+        request.success(function(){
+            $route.reload();
+        });
+    }
 });

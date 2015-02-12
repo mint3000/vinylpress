@@ -25,10 +25,38 @@ header .row{
 header .row h1{
     margin: 0;
 }
+header .row h1 a,
+header .row h1 a:hover,
+header .row h1 a:active,
+header .row h1 a:focus{
+    color: #ff5b02;
+    text-decoration: none;
+}
 .shaded{
     background-color: rgba(0, 0, 0, 0.7);
     margin-bottom: 10px;
     padding-bottom: 10px;
+}
+.post{
+    background-color: rgba(0, 0, 0, 0.3);
+    padding: 15px;
+    margin-bottom: 10px;
+}
+.post h3{
+    margin: 0 0 10px;
+}
+.post h3 a,
+.post h3 a:hover,
+.post h3 a:active,
+.post h3 a:focus{
+    color: #ff5b02;
+    text-decoration: none;
+}
+.post .date{
+    font-size: 0.8em;
+}
+ul.post{
+    list-style: none;
 }
 .margin-bottom-10{
     margin-bottom: 10px
@@ -41,6 +69,9 @@ header .row h1{
 }
 .margin-bottom-40{
     margin-bottom: 40px
+}
+.block{
+    display: block;
 }
 
 

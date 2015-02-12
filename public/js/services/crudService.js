@@ -21,10 +21,15 @@ crud.factory('CRUD', function($http){
             return $http.get('api/' + action + '/' + id);
         },
         update: function(action, id, data){
-            return $http.put('api/' + action + '/' + id, data);
+            var request = $http({
+                method: 'PUT',
+                url: 'api/' + action + '/' + id,
+                params: data
+            });
+            return request;
         },
-        delete: function(id){
-
+        delete: function(action, id){
+            return $http.delete('api/' + action + '/' + id);
         }
     }
 });

@@ -23,3 +23,23 @@ dashboardDirective.directive('getAuthor', function(){
         }
     };
 });
+
+dashboardDirective.directive('checkLogin', function(){
+   return {
+       controller: function($scope, SessionStorage){
+           $scope.checkLogin = function(){
+                return SessionStorage.get('auth');
+           };
+       },
+       compile: function(){
+           return function(scope, element, attrs){
+               console.log('logged in', scope.checkLogin());
+               if (scope.checkLogin()){
+                   element.html('<a href="#/admin/logout" class="btn btn-primary">Logout</a>');
+               }else{
+                   element.html('<a href="#/admin" class="btn btn-primary">Login</a>');
+               }
+           };
+       }
+   };
+});

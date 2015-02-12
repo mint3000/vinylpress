@@ -1,0 +1,12 @@
+<div class="row shaded">
+    <div class="col-sm-12">
+        <div class="post">
+            <p class="date">Posted by: <get-author authorId="{{ getPost.author_id }}"></get-author> - {{ getPost.created_at }}</p>
+            <h3><a href="#/post/{{ getPost.id }}">{{ getPost.title }}</a></h3>
+            <p>{{ getPost.text }}</p>
+            <h4>Comments</h4>
+            <comments commentid="{{ getPost.id }}"></comments>
+            <add-comment></add-comment>
+        </div>
+    </div>
+</div>
